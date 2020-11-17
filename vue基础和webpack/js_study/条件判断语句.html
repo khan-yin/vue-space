@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<!-- <link href="css/mui.css" rel="stylesheet" /> -->
+	</head>
+
+	<body>
+		<!-- <script src="js/mui.js"></script> -->
+		<script type="text/javascript">
+			
+			let un;
+			//undifined
+			if (un){
+			    //这里的代码不会被执行
+			    console.log(un);
+			} 
+			
+			un=null;
+			//null
+			if (un){
+			    //这里的代码不会被执行
+			    console.log(un);
+			} 
+			
+			let b = new Boolean(false);
+			
+			if (b){
+			    //这里的代码会被执行
+			    console.log(b.toString());
+			} 
+			let a= new Boolean("false");
+			if(a){
+			    //这里的代码会被执行
+			    console.log(a.toString());//会打印出false
+			}
+			
+			let x = false;
+			if (x) {
+			    // 这里的代码不会执行
+			    console.log("false");
+			}
+		</script>
+	</body>
+
+</html>

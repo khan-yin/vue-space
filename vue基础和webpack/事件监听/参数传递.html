@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		
+	</head>
+	<body>
+		<div id="app">
+			<button @click="btnClick">1</button>
+			<button @click="btn2Click">2</button>
+			<button @click="btn3Click">3</button>
+			<button @click="btn4Click">4</button>
+		</div>
+		<script>
+			const app=new Vue({
+				el:"#app",
+				data:{
+					message:"你好啊",
+				},
+				methods:{
+					btnClick(){
+						console.log("btnClick")
+					},
+					btn2Click(){
+						console.log("btn2")
+					},
+					btn3Click(event){
+						console.log(event)
+					},
+					btn4Click(){
+						console.log("c4")
+					}
+				}
+			})
+		</script>
+	</body>
+	
+</html>

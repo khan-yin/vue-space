@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			new Promise((resolve,reject)=>{
+				console.log("aaa")
+				setTimeout(()=>{
+					resolve("aaa")
+				},1000)
+			}).then(res=>{
+				console.log(res+" process1")
+				return new Promise(resolve =>{
+					resolve(res+' 111')
+				})
+			}).then(res=>{
+				console.log(res+" process2")
+				return new Promise(resolve =>{
+					resolve(res+'222')
+				})
+			}).then(res=>{
+				console.log(res+" process3")
+				return new Promise(resolve =>{
+					resolve(res+'333')
+				})
+			})
+		</script>
+		
+		<script type="text/javascript">
+			new Promise((resolve,reject)=>{
+				setTimeout(()=>{
+					resolve("aaa")
+				},1000)
+			}).then(res =>{
+				console.log(res+" process1")
+				// return Promise.resolve(res+'111')
+				// return Promise.reject('err')//出现异常后面不会在调用
+				throw 'err'//这种方法也行
+			}).then(res =>{
+				console.log(res+" process2")
+				return res+'222'//可以把promise简写成这种
+			}).then(res =>{
+				console.log(res+" process2")
+				return Promise.resolve(res+'333')
+			}).catch(err=>{
+				console.log(err)
+			})
+		</script>
+	</body>
+</html>

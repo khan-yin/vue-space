@@ -1,0 +1,30 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>CSS固定定位</title>
+    <style type="text/css">
+        #first
+        {
+            width:120px;
+            height:600px;
+            border:1px solid gray;
+            line-height:600px;
+            background-color:#B7F1FF;
+        }
+        #second
+        {
+            position:fixed;/*设置元素为固定定位*/
+            top:30px;/*距离浏览器顶部30px*/
+            left:160px;/*举例浏览器左部160px*/
+            width:60px;
+            height:60px;
+            border:1px solid silver;
+            background-color:#FA16C9;
+        }
+    </style>
+</head>
+<body>
+    <div id="first">无定位的div元素</div>
+    <div id="second">固定定位的div元素</div>
+</body>
+</html>

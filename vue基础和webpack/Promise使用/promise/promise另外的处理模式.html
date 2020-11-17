@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			new Promise((resolve,reject)=>{
+				setTimeout(()=>{
+					//成功的时候执行resolve
+					// resolve("hello world!")
+					//失败的时候调用reject
+					reject('error message')
+				},1000)
+			}).then(data=>{
+				//处理data
+				console.log(data)
+			},err=>{
+				console.log(err)
+			})
+		</script>
+	</body>
+</html>

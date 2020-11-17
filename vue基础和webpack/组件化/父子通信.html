@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		
+	</head>
+	<template id="cpn">
+		<div>
+			<button v-for="item in categories" @click="clickbtn(item)">{{item.name}}</button>
+		</div>
+	</template>
+	<body>
+		<div id="app">
+			<cpn @itemclick="cpnClick"></cpn>
+			<!-- <cpn v-bind:cmovies="movies" :cmessage="message"></cpn> -->
+			<!-- <my-cpn></my-cpn> -->
+		  <!-- {{ message }} -->
+		</div>
+		
+		<script>
+			const cpn={
+				template:'#cpn',
+				// props:['cmovies','cmessage'],
+				// props:{
+				// 	cmovies:Array,
+				// 	// cmessage:String,
+				// 	cmessage:{
+				// 		type:String,
+				// 		default:"aaa"
+				// 	}
+				// }
+				data(){
+					return{
+						categories:[
+							{id:"aaa",name:"热门推荐"},
+							{id:"bbb",name:"手机数码"},
+							{id:"ccc",name:"家用电器"},
+							{id:"ddd",name:"电脑办公"}
+						]
+					}
+				},
+				methods:{
+					clickbtn(item){
+						console.log(item.name);
+						this.$emit('itemclick',item)
+					}
+				}
+			}
+			
+			const app = new Vue({
+			  el: '#app',
+			  data: {
+			    message: 'Hello Vue!',
+				movies:['111','ddd','dsds']
+			  },
+			  components:{
+				  cpn
+			  },
+			  methods:{
+				  cpnClick(item){
+					console.log("cpnClick"+item.name)
+				  }
+			  }
+			})
+		</script>
+	</body>
+</html>

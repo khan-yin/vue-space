@@ -1,0 +1,1 @@
+(()=>{var o={359:o=>{o.exports={add:function(o,n){return o+n},mul:function(o,n){return o*n}}}},n={};function r(e){if(n[e])return n[e].exports;var t=n[e]={exports:{}};return o[e](t,t.exports,r),t.exports}(()=>{"use strict";const{add:o,mul:n}=r(359);console.log(o(20,30)),console.log(n(20,30)),console.log("why"),console.log(18),console.log(1.88)})()})();

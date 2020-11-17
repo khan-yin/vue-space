@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//箭头函数
+			const ccc = () =>{
+				
+			}
+			//放入一个参数,括号可以省略
+			const power = num =>{
+				return num*num
+			}
+			//放入两个参数
+			const sum =(num1,num2)=>{
+				return num1+num2
+			}
+			//函数代码只有一行时
+			const mul = (num1,num2)=> num1+num2
+			console.log(mul(20,30))
+			
+			//结论:向外层作用域中，一层层查找this，直到有this的定义，
+			//箭头函数的this引用的是最近作用域的this
+			const obj ={
+				aaa(){
+					setTimeout(function(){
+						setTimeout(function(){
+							console.log(this)//window
+						})
+						
+						console.log(this)//window
+						
+						setTimeout(()=>{
+							console.log(this)//window
+						})
+						
+					})
+					
+					setTimeout(()=>{
+						setTimeout(function(){
+							console.log(this)//window
+						})
+						
+						console.log(this)//obj对象
+						
+						setTimeout(()=>{
+							console.log(this)//obj对象
+						})
+					})
+				}
+			}
+			console.log(obj.aaa())
+		</script>
+	</body>
+</html>

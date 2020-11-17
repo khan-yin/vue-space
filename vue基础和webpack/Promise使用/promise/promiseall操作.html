@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//多个异步请求同时发送,all传数组
+			Promise.all([
+				new Promise((resolve,reject)=>{
+					setTimeout(()=>{
+						resolve({name:"why",age:19})
+					},2000)
+				}),
+				new Promise((resolve,reject)=>{
+					setTimeout(()=>{
+						resolve({name:"why",age:20})
+					},1000)
+				})
+			]).then(results=>{
+				console.log(results)
+			})
+		</script>
+	</body>
+</html>

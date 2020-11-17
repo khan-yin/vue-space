@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style type="text/css">
+		
+		body{
+			width: 100vw;
+			height: 100vh;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+		}
+		
+		#app{
+			
+		}
+	</style>
+	<body>
+		<div id="app">
+			<ul>
+				<li v-for="(item,index) in itemList" @click="itemList.splice(index,1)">
+					{{item}}
+					{{index}}
+				</li>
+			</ul>
+			
+			<input v-model="information" v-on:keyup.enter="addItem(information)" />
+			<button  v-on:click="addItem(information)">点击新增</button>
+			<p title="msg">title</p>
+			
+		</div>
+		<script>
+			let app = new Vue({
+				el:"#app",
+				data:{
+					information:"",
+					itemList:[],
+					msg:"这是一个msg"
+				},
+				methods:{
+					addItem:function(item){
+						this.itemList.push(item);
+						this.information="";
+					},
+					
+				}
+			})
+			
+		</script>
+	</body>
+	
+</html>

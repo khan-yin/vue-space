@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		
+	</head>
+	<body>
+		<div id="app">
+			<ul>
+				<li v-for="item in letters" :key="item">{{item}}</li>
+			</ul>
+			<button @click="btnClick">push</button>
+		</div>
+		
+		<script>
+			const app =new Vue({
+				el:"#app",
+				data:{
+					letters:['a','b','c','d']
+				},
+				methods:{
+					btnClick(){
+						//可响应式的方法
+						// this.letters.push('aaa')
+						// this.letters.push('aaaa','sss','dada')
+						// this.letters.pop():删除数组中最后一个元素
+						// this.letters.shift():删除数组中第一个元素
+						// this.letters.unshift('aaa')：在数组最前面添加元素
+						
+						//splice作用：删除/添加/替换元素
+						//删除元素：第二个参数表示删除几个元素，如果不设置第二个参数则回从start位置全部删除
+						//替换元素：第二个参数，表示我们需要替换几个元素，后面是用于替换前面的元素
+						//添加元素，第二个蚕食为0，传入0，并且后面跟上要插入的元素
+						//splice(start)
+						
+						//sort()
+						this.letters.sort()
+						// reverse()
+						// this,letters.reverse()
+						// this.letters.splice()
+						
+						//注意，通过索引值来修改数组的元素这种方式不被vue监听
+						// this.letters[0]='bbb'
+						//那么我们可以通过以下方法解决
+						//this.letters.splice(0,1,'bbbb')
+						//set(要修改的对象，索引值，修改后的值，)
+						Vue.set(this.letters,0,'bbbbb')
+						
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

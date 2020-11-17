@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+		const MY_OBJECT = {"key": "value"};
+		MY_OBJECT.key = "otherValue";
+		console.log(MY_OBJECT.key);
+		const MY_ARRAY = ['HTML','CSS'];
+		MY_ARRAY.push('JAVASCRIPT');
+		console.log(MY_ARRAY); //logs ['HTML','CSS','JAVASCRIPT'];
+		
+		//字面量
+		var car = { manyCars: {a: "Saab", "b": "Jeep"}, 7: "Mazda" };
+		console.log(car.manyCars.b); // Jeep
+		console.log(car[7]); // Mazda
+		
+		var unusualPropertyNames = {
+		  "": "An empty string",
+		  "!": "Bang!"
+		}
+		//console.log(unusualPropertyNames."");   // 语法错误: Unexpected string
+		console.log(unusualPropertyNames[""]);  // An empty string
+		//console.log(unusualPropertyNames.!);    // 语法错误: Unexpected token !
+		console.log(unusualPropertyNames["!"]); // Bang!
+		
+		console.log(`Roses are red,
+Violets are blue.
+Sugar is sweet,
+and so is foo.`)
+		  console.log(`Roses are red,
+		                Violets are blue.
+		                Sugar is sweet,
+		                and so is foo.`)
+	</script>
+</html>
